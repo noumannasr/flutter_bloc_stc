@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_weather/business_layer/bloc/api_bloc.dart';
 import 'package:flutter_bloc_weather/business_layer/constants/colors.dart';
+import 'package:flutter_bloc_weather/business_layer/services/my_shared_preference.dart';
+import 'package:flutter_bloc_weather/business_layer/utils/routes/routes_name.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/products/widget/product_item.dart';
 import 'package:provider/provider.dart';
 
@@ -39,10 +41,9 @@ class _ProductListViewState extends State<ProductListView> {
         actions: [
           IconButton(
               onPressed: () {
-                // userviewModel.remove().then((value) {
-                //   Navigator.pushNamedAndRemoveUntil(
-                //       context, RoutesName.login, (route) => false);
-                // });
+                MySharedPreference.setIsLoggedIn(false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, RoutesName.login, (route) => false);
               },
               icon: Icon(
                 Icons.logout,

@@ -15,7 +15,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       if (check) {
         emit(SplashLoaded(isLoggedIn: true));
       } else {
-        await Future.delayed(Duration(seconds: 5)).whenComplete(() {
+        await Future.delayed(const Duration(seconds: 2)).whenComplete(() {
           emit(SplashLoaded(isLoggedIn: false));
         });
       }
