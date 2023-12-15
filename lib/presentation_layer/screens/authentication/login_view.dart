@@ -54,7 +54,7 @@ class _LoginViewState extends State<LoginView> {
           if (state is LoginLoading) {
             return const Center(child: CircularProgressIndicator());
           }
-          else if (state is LoginInitial) {
+          else if (state is LoginInitial || state is LoginError) {
             return SingleChildScrollView(
               child: Column(
                 children: [

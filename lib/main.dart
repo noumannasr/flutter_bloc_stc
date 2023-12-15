@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: RoutesName.splash,
         onGenerateRoute: Routes.generateRoutes,
-        home: const LoginView(),//const ProductListView(),
+        home: const LoginView(),
       ),
     );
   }

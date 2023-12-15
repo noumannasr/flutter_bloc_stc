@@ -7,7 +7,7 @@ import 'package:meta/meta.dart';
 
 part 'splash_event.dart';
 part 'splash_state.dart';
-
+// git commit -m "logout commit"
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   SplashBloc() : super(SplashInitial()) {
     on<CheckIsLoggedIn>((event, emit) async {
