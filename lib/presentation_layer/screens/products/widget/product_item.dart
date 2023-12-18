@@ -6,9 +6,11 @@ import 'package:flutter_bloc_weather/data_layer/model/product_model.dart';
 
 class ProductItem extends StatefulWidget {
   final ProductModel product;
+  final VoidCallback onTap;
   const ProductItem({
     super.key,
     required this.product,
+    required this.onTap,
   });
 
   @override
@@ -20,10 +22,7 @@ class _ProductItemState extends State<ProductItem> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {
-        // Navigator.pushNamed(context, RoutesName.product_detail,
-        //     arguments: widget.product.id);
-      },
+      onTap: widget.onTap,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

@@ -4,6 +4,8 @@ import 'package:flutter_bloc_weather/business_layer/bloc/api_bloc.dart';
 import 'package:flutter_bloc_weather/business_layer/constants/colors.dart';
 import 'package:flutter_bloc_weather/business_layer/services/my_shared_preference.dart';
 import 'package:flutter_bloc_weather/business_layer/utils/routes/routes_name.dart';
+import 'package:flutter_bloc_weather/data_layer/model/product_detail_model.dart';
+import 'package:flutter_bloc_weather/presentation_layer/screens/detail/detailBloc/detail_bloc.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/products/widget/product_item.dart';
 import 'package:provider/provider.dart';
 
@@ -69,7 +71,12 @@ class _ProductListViewState extends State<ProductListView> {
                             final productItem =
                             state.productList[index];
                             return ProductItem(
-                              product: productItem,
+                              product: productItem, onTap: () {
+
+                              context.read<DetailBloc>().add(GetLoadedData(model: productItem));
+                              Navigator.pushNamed(context, RoutesName.product_detail,
+                                  arguments:productItem.id);
+                            },
                             );
                           });
         }

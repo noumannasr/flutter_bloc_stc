@@ -6,6 +6,7 @@ import 'package:flutter_bloc_weather/business_layer/utils/routes/routes.dart';
 import 'package:flutter_bloc_weather/business_layer/utils/routes/routes_name.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/authentication/bloc/login_bloc.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/authentication/login_view.dart';
+import 'package:flutter_bloc_weather/presentation_layer/screens/detail/detailBloc/detail_bloc.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/home_view.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/products/product_list_view.dart';
 import 'package:flutter_bloc_weather/presentation_layer/screens/splash/splashBloc/splash_bloc.dart';
@@ -25,11 +26,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers:  [
-
         BlocProvider(create: (context) => SplashBloc()..add(CheckIsLoggedIn())),
         BlocProvider(create: (context) => LoginBloc()),
         BlocProvider(create: (context) => ApiBloc()..add(LoadGetData())),
-
+        BlocProvider(create: (context) => DetailBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
