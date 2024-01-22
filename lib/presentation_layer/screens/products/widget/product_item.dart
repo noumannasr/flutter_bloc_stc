@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_weather/business_layer/constants/colors.dart';
 import 'package:flutter_bloc_weather/data_layer/model/product_model.dart';
 
-
 class ProductItem extends StatefulWidget {
   final ProductModel product;
   final VoidCallback onTap;
@@ -27,7 +26,7 @@ class _ProductItemState extends State<ProductItem> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: size.height * 0.25,
               width: size.width,
               child: Stack(
@@ -50,8 +49,7 @@ class _ProductItemState extends State<ProductItem> {
                             width: size.width,
                             fit: BoxFit.scaleDown,
                             imageUrl: widget.product.image.toString(),
-                            errorWidget: (context, url, error) =>
-                                Icon(Icons.error),
+                            errorWidget: (context, url, error) => const Icon(Icons.error),
                           ),
                         ),
                       ),
@@ -61,19 +59,15 @@ class _ProductItemState extends State<ProductItem> {
                     bottom: size.height * 0.02,
                     left: size.width * 0.05,
                     child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 4, top: 4, bottom: 4, right: 8),
+                      padding: const EdgeInsets.only(left: 4, top: 4, bottom: 4, right: 8),
                       width: size.width * 0.88,
                       alignment: Alignment.centerLeft,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            widget.product.price.toString() + ' ' + ' AED',
-                            style: TextStyle(
-                                color: AppColors.darkBlueColor,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
+                            '${widget.product.price}  AED',
+                            style: const TextStyle(color: AppColors.darkBlueColor, fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           //RatingItem(rate: widget.product.rating!.rate,),
                         ],
@@ -84,29 +78,21 @@ class _ProductItemState extends State<ProductItem> {
               ),
             ),
             Container(
-              padding:
-                  const EdgeInsets.only(left: 8, top: 4, bottom: 4, right: 8),
+              padding: const EdgeInsets.only(left: 8, top: 4, bottom: 4, right: 8),
               width: size.width,
               alignment: Alignment.centerLeft,
               child: Text(
                 widget.product.title.toString(),
-                style: TextStyle(
-                    color: AppColors.darkBlueColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold),
+                style: const TextStyle(color: AppColors.darkBlueColor, fontSize: 12, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
-              padding:
-                  const EdgeInsets.only(left: 8, top: 4, bottom: 4, right: 8),
+              padding: const EdgeInsets.only(left: 8, top: 4, bottom: 4, right: 8),
               width: size.width,
               alignment: Alignment.centerLeft,
               child: Text(
                 widget.product.description.toString(),
-                style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300),
+                style: const TextStyle(color: AppColors.blackColor, fontSize: 12, fontWeight: FontWeight.w300),
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -114,8 +100,8 @@ class _ProductItemState extends State<ProductItem> {
             SizedBox(
               height: size.height * 0.02,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
+            const Padding(
+              padding: EdgeInsets.only(top: 8, left: 8, right: 8),
               child: Divider(
                 height: 1,
                 color: AppColors.greyColor,

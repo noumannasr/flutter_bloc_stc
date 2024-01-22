@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 
 class Utils {
 
-
-
  // git commit -m "8/15/23 commit Nouman"
  static void flushBarErrorMessage(String message, BuildContext context, Color color, String title) {
    showFlushbar(context: context, flushbar: Flushbar(

@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MySharedPreference {
+
   static SharedPreferences? _preferences;
 
   static init() async {
@@ -14,4 +15,5 @@ class MySharedPreference {
   static bool getIsLoggedIn() {
     return _preferences!.getBool('isLoggedIn') ?? false;
   }
+
 }

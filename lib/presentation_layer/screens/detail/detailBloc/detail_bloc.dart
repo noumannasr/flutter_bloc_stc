@@ -17,6 +17,7 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
     on<GetLoadedData>((event, emit) async {
       emit(DetailLoadingState());
       await _myProductDetail.getDataFromApi(event.model.id!).then((product) {
+        print('we return back to bloc');
         emit(DetailLoadedState(product: product));
       }).onError((error, stackTrace) {
         if (kDebugMode) {
@@ -25,5 +26,8 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
         }
       });
     });
+
+
+
   }
 }

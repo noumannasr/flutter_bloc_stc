@@ -61,7 +61,7 @@ class _SplashViewState extends State<SplashView> {
                       tileMode: TileMode.repeated)),
               width: size.width,
               height: size.height,
-              child: Container(
+              child:  SizedBox(
                   width: size.width * 0.5,
                   child: const Center(
                       child: Padding(
@@ -78,7 +78,7 @@ class _SplashViewState extends State<SplashView> {
             );
            }
            else{
-             return Center(child: CircularProgressIndicator());
+             return const Center(child: CircularProgressIndicator());
            }
 
 

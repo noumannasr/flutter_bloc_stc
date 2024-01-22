@@ -22,7 +22,7 @@ class ProductDetailRepository {
       await _apiService.get(AppUrls.productsEndPoint + '/$id').then((value) {
         products = ProductDetailModel.fromJson(value);
 
-        log(products.toString());
+        log(products.toString() + ' We are here');
         return products;
       });
       return products!;

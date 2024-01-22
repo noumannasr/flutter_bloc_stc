@@ -1,0 +1,13 @@
+image: mobiledevops/flutter-sdk-image:latest
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - echo "This script runs only on commit to the main branch."
+            - flutter clean
+            - flutter pub get
+            - flutter build apk
+          trigger: automatic
+          artifacts:
+            - "build/app/outputs/apk/release/*"

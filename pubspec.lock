@@ -142,6 +142,38 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_background_service:
+    dependency: "direct main"
+    description:
+      name: flutter_background_service
+      sha256: "94d9a143852729140e17254a53769383b03738cd92b6e588a8762003e6cd9dd9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.5"
+  flutter_background_service_android:
+    dependency: transitive
+    description:
+      name: flutter_background_service_android
+      sha256: "30863ebafd8214b8e76d5e5c9f27887dc5cc303fcf3e89f71534f621fc486782"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.2.2"
+  flutter_background_service_ios:
+    dependency: transitive
+    description:
+      name: flutter_background_service_ios
+      sha256: ab73657535876e16abc89e40f924df3e92ad3dee83f64d187081417e824709ed
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
+  flutter_background_service_platform_interface:
+    dependency: transitive
+    description:
+      name: flutter_background_service_platform_interface
+      sha256: cd5720ff5b051d551a4734fae16683aace779bd0425e8d3f15d84a0cdcc2d8d9
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
   flutter_bloc:
     dependency: "direct main"
     description:
@@ -176,6 +208,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      sha256: f79870884de16d689cf9a7d15eedf31ed61d750e813c538a6efb92660fea83c3
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.6.4"
   http:
     dependency: transitive
     description:
@@ -313,13 +353,21 @@ packages:
     source: hosted
     version: "2.1.7"
   provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: provider
       sha256: "9a96a0a19b594dbc5bf0f1f27d2bc67d5f95957359b461cd9feb44ed6ae75096"
       url: "https://pub.dev"
     source: hosted
     version: "6.1.1"
+  responsive_sizer:
+    dependency: "direct main"
+    description:
+      name: responsive_sizer
+      sha256: "206d1f77f65ed8394ef2a526583e38e874ee36f036f3fe9aefb0f58ecba9bef9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   rxdart:
     dependency: transitive
     description:
